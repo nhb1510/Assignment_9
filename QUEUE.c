@@ -49,8 +49,8 @@ void enqueue (struct Queue *queue, int item) {
     }
     printf ("=> %d added to queue.\n",item);
 
-    //rear ban đầu là -1, ở lần gọi đầu tiền queue.rear = 0;
-    queue->rear ++;
+    //rear khai báo là -1, 
+    queue->rear ++; // ở lần gọi đầu tiền queue->rear = 0;
     queue->array[queue->rear] = item;
     //tăng size queue sau khi gán
     queue ->size ++;
@@ -81,7 +81,7 @@ int dequeue (struct Queue* queue) {
         return buffer;
     }
 }
-
+//in hàng đợi và thông tin Queue hiện tại
 void showqueue (struct Queue* queue)
 {
     printf ("\n######## QUEUE INFO ######## \n");
