@@ -9,17 +9,26 @@ struct Queue {
     int rear ;
     int size ;
     int capacity;
-    int array[];
+    int *array;
 };
 
 struct Queue *createQueue (unsigned int capacity) {
     // Triển khai hàm tạo Queue mới
     struct Queue *createQueue = malloc(sizeof (struct Queue));
+    if (createQueue == NULL){
+        printf ("Not enough memory to allocate.");
+        exit (1);
+    }
     createQueue->front = -1;
     createQueue->rear = -1;
     createQueue->size = 0;
     createQueue->capacity = capacity;
-    createQueue->array[capacity];
+
+    createQueue->array = (int*) malloc (sizeof(int)*capacity);
+    if (createQueue->array == NULL){
+        printf ("Not enough memory to allocate.");
+        exit (1);
+    }
     return createQueue;
 }
 
@@ -111,7 +120,6 @@ int main() {
     // Thêm phần tử mới vào Queue
     printf ("\n");
     enqueue(queue, 50);
-    showqueue (queue);
 
     // In ra phần tử ở đầu và cuối Queue
     printf("\nFront item is Queue[%d] %d\n",queue->front , queue->array[queue->front]);
