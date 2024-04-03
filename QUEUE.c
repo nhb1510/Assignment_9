@@ -66,7 +66,7 @@ int dequeue (struct Queue* queue) {
     }
 
     else
-    {   //Nhập vị trí phần tử chứa item để lấy ra khỏi mảng
+    {   //Nhập vị trí phần tử chứa item để lấy ra khỏi Queue
         printf("\nEnter the position of the item you want to dequeue from the Queue: %d to %d\n", queue->front , queue->rear );
         int n;
         scanf ("%d",&n);
