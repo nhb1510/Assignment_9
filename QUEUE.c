@@ -9,7 +9,7 @@ struct Queue {
     int rear ;
     int size ;
     int capacity;
-    int array[5];
+    int array[];
 };
 
 struct Queue *createQueue (unsigned int capacity) {
@@ -19,6 +19,7 @@ struct Queue *createQueue (unsigned int capacity) {
     createQueue->rear = -1;
     createQueue->size = 0;
     createQueue->capacity = capacity;
+    createQueue->array[capacity];
     return createQueue;
 }
 
